@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Gmail Email Fetcher",
+  "version": "1.0",
+  "permissions": ["storage","tabs","activeTab", "scripting"],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "http://localhost:5000/*",
+     "http://localhost:11434/*",
+     "http://localhost:5001/*" 
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Fetch Gmail Email"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}

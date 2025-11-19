@@ -1,0 +1,13 @@
+# Flask sensitive files
+flask-backend/app.py
+
+# Node modules
+node_modules/
+ollama-proxy/node_modules/
+
+# Python cache
+__pycache__/
+
+# Env files
+*.env
+*.pyc
